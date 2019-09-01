@@ -559,9 +559,11 @@ app.post("/volunteer",function(req,res){
   }
 });
 
+let port=process.env.PORT;
+if(port==null || port==""){
+  port=3000;
+}
 
-
-
-app.listen(4000,function(){
-  console.log("server created");
+app.listen(port,function(){
+  console.log("server");
 });
