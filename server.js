@@ -17,6 +17,7 @@ var myconfig=require(__dirname+"/myconfig.json");
 mongoose.connect("mongodb+srv://mongoadmin:test123@cluster0-n2oq4.mongodb.net/itsa",{ useNewUrlParser: true });
 let auth="false";
 var message="";
+let status="";
 
 const event1Schema={
   uniqueid:Number,
@@ -109,7 +110,7 @@ const model6=mongoose.model("event6",event5Schema);
 const model7=mongoose.model("event7",event5Schema);
 const model8=mongoose.model("event8",event5Schema);
 
-app.get("/",function(req,res){
+app.get("/1",function(req,res){
   res.render("registration",{
     message:message
   });
@@ -409,7 +410,7 @@ if(eventname==="1.ShutterUp"){
   fs.writeFileSync(__dirname+"/myconfig.json", JSON.stringify(myconfig));
 }
 message="success";
-res.redirect("/");
+res.redirect("/1");
 });
 
 app.get("/event1",function(req,res){
@@ -515,7 +516,7 @@ else{
 app.post("/authentication",function(req,res){
   let user=req.body.username;
   let password=req.body.password;
-  if(user==="admin@shortblog.com"&&password==="123456")
+  if(user==="admin@itsa.com"&&password==="123456")
   {
     auth="true";
     res.redirect("/admin");
@@ -528,7 +529,7 @@ app.post("/authentication",function(req,res){
 
 app.get("/logout",function(req,res){
   auth="false";
-  res.redirect("/");
+  res.redirect("/1");
 });
 
 app.get("/v",function(req,res){
@@ -538,6 +539,27 @@ app.get("/v",function(req,res){
 app.get("/error",function(req,res){
   res.render("error");
 });
+
+app.get("/",function(req,res){
+  res.render("volunteer",{
+    message:status
+  });
+});
+
+app.post("/volunteer",function(req,res){
+  let user=req.body.username;
+  let password=req.body.password;
+  if(user==="volunteer@itsa.com"&&password==="pccoeitsa46")
+  {
+    res.redirect("/1");
+  }
+  else{
+    status="user or password invalid";
+    res.redirect("/");
+  }
+});
+
+
 
 
 app.listen(4000,function(){
