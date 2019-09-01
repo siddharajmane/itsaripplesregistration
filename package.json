@@ -1,0 +1,30 @@
+{
+  "name": "itsa",
+  "version": "1.0.0",
+  "description": "itsa portal",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "siddharaj mane",
+  "license": "ISC",
+  "engines": {
+    "node":"10.16.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^2.6.2",
+    "express": "^4.17.1",
+    "gmail-send": "^1.8.10",
+    "lodash": "^4.17.15",
+    "mongodb": "^3.3.1",
+    "mongoose": "^5.6.11",
+    "nexmo": "^2.4.1",
+    "node-mailjet": "^3.3.1",
+    "nodemailer": "^6.3.0",
+    "nodemon": "^1.19.1",
+    "sendmail": "^1.6.1",
+    "twilio": "^3.33.4"
+  }
+}

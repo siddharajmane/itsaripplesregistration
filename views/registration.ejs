@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <title>ITSA Ripples 2k19 Registration page</title>
+</head>
+
+<body>
+  <html lang="en" dir="ltr">
+    <head>
+      <meta charset="utf-8">
+      <meta charset="utf-8" name="viewport"
+          content= "width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="css/footer.css">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <title></title>
+    </head>
+    <body>
+      <nav class="navbar p-4 navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">PCCOE ITSA 2K19</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link" href="/admin">ADMIN LOGIN</a>
+          </div>
+        </div>
+      </nav>
+
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-header">ITSA Ripples Registration</div>
+          <div class="card-body">
+            <form name="my-form" onsubmit="return validform()" action="/registrationsubmit" method="post">
+              <div class="form-group row">
+                <label for="full_name" class="col-md-4 col-form-label text-md-right">Full Name/Team leader name</label>
+                <div class="col-md-6">
+                  <input type="text" id="full_name" class="form-control" name="fullname">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="email_address" class="col-md-4 col-form-label text-md-right">Email Address</label>
+                <div class="col-md-6">
+                  <input type="text" id="email_address" class="form-control" name="emailaddress">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="phone_number" class="col-md-4 col-form-label text-md-right">Phone Number</label>
+                <div class="col-md-6">
+                  <input type="text" id="phone_number" class="form-control" name="phone">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="phone_number" class="col-md-4 col-form-label text-md-right">Enter College name</label>
+
+                <div class="col-md-6">
+                  <input type="text" id="nid_number" class="form-control" name="college">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="exampleFormControlSelect1" class="col-md-4 col-form-label text-md-right">Select event</label>
+                <div class="col-md-6">
+                  <select name="eventtype"class="form-control" id="exampleFormControlSelect1">
+                    <option>1.ShutterUp</option>
+                    <option>2.Play Placing</option>
+                    <option>3.Respawn</option>
+                    <option>4.Quizcraft</option>
+                    <option>5.Design thinking workshop</option>
+                    <option>6.Mafia</option>
+                    <option>7.Clash of coders</option>
+                    <option>8.workshop on web development</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="exampleFormControlSelect1" class="col-md-4 col-form-label text-md-right">Select no of team members</label>
+                <div class="col-md-6">
+                  <select name="teamno"class="form-control" id="exampleFormControlSelect1">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="exampleFormControlSelect1" class="col-md-4 col-form-label text-md-right">Payment status</label>
+                <div class="col-md-6">
+                  <select name="payment"class="form-control" id="exampleFormControlSelect1">
+                    <option>Not paid</option>
+                    <option>Paid</option>
+                  </select>
+                </div>
+              </div>
+
+
+              <div class="col-md-6 offset-md-4">
+                <button type="submit" class="btn btn-primary">
+                  Register</button>
+              </div>
+              <div class="container">
+                <span class="badge badge-success"><%=message%></span>
+              </div>
+          </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function validform() {
+
+            var a = document.forms["my-form"]["fullname"].value;
+            var b = document.forms["my-form"]["emailaddress"].value;
+            var c = document.forms["my-form"]["phone"].value;
+            var d = document.forms["my-form"]["college"].value;
+
+            if (a==null || a=="")
+            {
+                alert("Please Enter Your Full Name");
+                return false;
+            }else if (b==null || b=="")
+            {
+                alert("Please Enter Your Email Address");
+                return false;
+            }else if (c==null || c=="")
+            {
+                alert("Please enter valid number");
+                return false;
+            }else if (d==null || d=="")
+            {
+                alert("Please Enter Your College name");
+                return false;
+            }
+
+            if(c.length<10 && (!c.length>10)){
+              alert("Phone no. not valid");
+              return false;
+            }
+
+        }
+  </script>
+
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+
+</html>
