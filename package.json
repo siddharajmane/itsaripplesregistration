@@ -22,7 +22,7 @@
     "mongoose": "^5.6.11",
     "nexmo": "^2.4.1",
     "node-mailjet": "^3.3.1",
-    "nodemailer": "^6.3.0",
+    "nodemailer": "^6.4.16",
     "nodemon": "^1.19.1",
     "sendmail": "^1.6.1",
     "twilio": "^3.33.4"
